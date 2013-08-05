@@ -31,6 +31,7 @@
     <!-- HEADER -->
     <?php // Display demo-mode alert
     $this->widget('bootstrap.widgets.TbAlert', array(
+        'id'=>'demo-alert',
         'alerts'=>array( // configurations per alert type
             'demo'=>array('block'=>true, 'fade'=>true, 'closeText'=>false),
         ),
