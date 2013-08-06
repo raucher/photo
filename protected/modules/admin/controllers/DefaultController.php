@@ -10,14 +10,14 @@ class DefaultController extends AdminController
 	public function accessRules()
 	{
 		return array(
-			array('allow',
+			array('allow', // All all to admin
 				'roles'=>array('admin'),
 			),
-			array('allow',
+			array('allow', // Allow any user to view login page
 				'actions' => array('login'),
 				'users'=>array('*'),
 			),
-			array('deny',  // deny all users
+			array('deny',  // Deny all other actions for unregistered users
 				'users'=>array('*'),
 			),
 		);
@@ -26,6 +26,7 @@ class DefaultController extends AdminController
     public function actions()
     {
         return array(
+            // Actions for Imperavi Redactor file and image managing
             'redactorImageUpload' => array(
                 'class'=>'ext.imperaviRedactor.actions.ImageUpload',
                 'uploadPath'=>Yii::getPathOfAlias('webroot.uploads.images'),
@@ -79,7 +80,7 @@ class DefaultController extends AdminController
 
 	public function actionLogout()
 	{
-        if(Yii::app()->user->id === 'demo_user_id')
+        if(Yii::app()->user->id === 'demo_mode_user')
         {
             // Sets current connection inactive otherwise unlink will not be able to delete db file
             Yii::app()->db->setActive(false);
@@ -104,7 +105,7 @@ class DefaultController extends AdminController
 			$t = Yii::app()->db->beginTransaction();
 			$valid = true;
 			try
-			{	// Divide options by type: 'user' and 'system' in our case
+			{	// Separate options by type: 'user' and 'system' in our case
 				foreach($options as $type => $optionSet)
 				{
 
@@ -113,8 +114,8 @@ class DefaultController extends AdminController
 					foreach ($optionSet as $i => $option) 
 					{
 						 // $_POST structure is such:
-						 //  $_POST['Options']['option_type']['option_index']['option_data']
-						 //  $_POST['Options']['user'][0]['value'] for example
+						 // $_POST['Options']['option_type']['option_index']['option_data']
+						 // $_POST['Options']['user'][0]['value'] for example
 						$option->value = $_POST['Option'][$type][$i]['value'];
 						$valid = $option->save() && $valid;
 					}

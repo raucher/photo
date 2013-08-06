@@ -57,8 +57,27 @@ class PhotoController extends Controller
             ),
             array(
                 'admin.components.DemoModeFilter', // Enables demo mode alerts
-                'message'=>'<strong>You are in demo mode now!</strong>
-                            <p>You can see here all changes made by you at the dashboard</p>',
+                'message' => '<strong>You are in demo mode now!</strong>
+                             <p>You can see here all changes made by you at the dashboard</p>',
+            ),
+            array(
+                'COutputCache',
+                'duration' => 5*60, // 5 minutes
+                'varyByParam' => array('lang'),
+                'dependency' => array(
+                    'class' => 'CDbCacheDependency',
+                    'sql' => 'SELECT MAX(update_time) FROM (SELECT update_time FROM tbl_gallery
+                              UNION SELECT update_time FROM tbl_media
+                              UNION SELECT update_time FROM tbl_option)',
+                ),
+            ),
+            array(
+                'CHttpCacheFilter',
+                'lastModified' => Yii::app()->db
+                                            ->createCommand('SELECT MAX(update_time) FROM (SELECT update_time FROM tbl_gallery
+                                              UNION SELECT update_time FROM tbl_media
+                                              UNION SELECT update_time FROM tbl_option)')
+                                            ->queryScalar(),
             ),
         );
     }
@@ -101,7 +120,7 @@ class PhotoController extends Controller
 
         $this->render('index', array(
             'photos' => $photos,
-            'mediaUrl' => Yii::app()->homeUrl.'/media/',
+            'mediaUrl' => Yii::app()->homeUrl.'media/',
         ));
     }
 

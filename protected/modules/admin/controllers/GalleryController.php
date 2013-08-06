@@ -28,8 +28,7 @@ class GalleryController extends AdminController
 	 */
 	public function actionCreate()
 	{
-        $langs = array('en', 'ru', 'lv');
-        foreach ($langs as $lang) {
+        foreach ($this->langs as $lang) {
             $translations[$lang] = new GalleryTranslation;
         }
 
@@ -61,8 +60,7 @@ class GalleryController extends AdminController
 	{
 		$model=$this->loadModel($id);
 
-        $langs = array('en', 'ru', 'lv');
-        foreach ($langs as $lang){
+        foreach ($this->langs as $lang){
             // Get translation associated with language
             $translation = GalleryTranslation::model()->findByPk(array(
                 'gallery_id' => $model->id,
@@ -187,7 +185,6 @@ class GalleryController extends AdminController
             ),
         ));
 
-		// TODO: Check for media presence in database
 		if( isset($_POST['Medias']) && is_array($medias = $_POST['Medias']) )
 		{
 			$sql = 'INSERT INTO tbl_gallery_media_assoc(media_id, gallery_id)
@@ -199,8 +196,8 @@ class GalleryController extends AdminController
 			try{
 				foreach ($medias as $mediaId) {
 					$query->execute(array(
-							':mediaId' => $mediaId, 
-							':galleryId' => $gallery->id, 
+							':mediaId' => (int) $mediaId,
+							':galleryId' => $gallery->id,
 						));
 				}
 				$t->commit();

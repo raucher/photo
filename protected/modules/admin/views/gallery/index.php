@@ -25,6 +25,7 @@ $this->menu=array(
 		array('header'=>'Medias', 'value'=>'count($data->medias)'),
 		array(
             'class'=>'bootstrap.widgets.TbButtonColumn',
+            'template'=>'{update}{delete}',
             'htmlOptions'=>array('style'=>'width: 50px'),
         ),
 	),

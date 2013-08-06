@@ -1,12 +1,3 @@
-<?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Makc
- * Date: 7/3/13
- * Time: 3:04 PM
- * To change this template use File | Settings | File Templates.
- */
-?>
 
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->homeUrl.'js/debounce.min.js') ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->homeUrl.'js/jquery.carouFredSel-6.0.4-packed.js') ?>

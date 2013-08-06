@@ -62,7 +62,7 @@
                                         'label'=>'Change Password',
                                         'icon'=>'lock',
                                         'url'=>array('/admin/default/newpass'),
-                                        'visible'=> Yii::app()->user->id !== 'demo_mode_id',
+                                        'visible'=> Yii::app()->user->id !== 'demo_mode_user',
                                     ),
 								),
 						)); ?>

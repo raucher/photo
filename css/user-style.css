@@ -81,6 +81,9 @@ html, body{
 #main-logo{
     margin-left:10%;
 }
+#main-logo a:hover{
+    color: inherit;
+}
 
 /************ MAIN-CONTENT ******************/
 .content-block{

@@ -2,7 +2,7 @@
 
 /**
  * Class AdminLoginForm
- * Login model for admin user
+ * Login model for back end
  *
  * @package photo
  * @author raucher <myplace4spam@gmail.com>
@@ -10,7 +10,7 @@
 class AdminLoginForm extends CFormModel
 {
 	private $_user;
-	public $username, $password, $rememberMe;
+	public $username, $password, $rememberMe = 0;
 
 	public function rules()
 	{

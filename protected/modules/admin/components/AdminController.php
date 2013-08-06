@@ -8,6 +8,11 @@
  */
 class AdminController extends Controller
 {
+    /**
+     * @var array language array
+     */
+    private $_langs = array();
+
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -47,6 +52,23 @@ class AdminController extends Controller
 			),
 		);
 	}
+
+    public function init()
+    {
+        // Get languages from config/main.php
+        $this->_langs = Yii::app()->params->langs;
+    }
+
+    /**
+     * Getter for $_langs property.
+     * It's necessary for readonly access to that property
+     *
+     * @return array Avaliable languages
+     */
+    public function getLangs()
+    {
+        return $this->_langs;
+    }
 
     /**
      * Customizes the page title
