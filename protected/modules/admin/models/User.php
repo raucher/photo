@@ -46,13 +46,10 @@ class User extends ActiveRecordExt
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			/*array('name, password', 'type', 'type'=>'string'),
-			array('name, password', 'fiter', 'filter'=>'trim'),*/
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, role, password', 'safe', 'on'=>'search'),
 			// The following rules are used by password change.
-			// array('checkCurrentPass, newPass, newPass_repeat', 'required', 'on'=>'changePass'),
 			array(
                 'checkCurrentPass, newPass, newPass_repeat, name',
                 'filter',

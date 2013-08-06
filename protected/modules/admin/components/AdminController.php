@@ -61,7 +61,7 @@ class AdminController extends Controller
 
     /**
      * Getter for $_langs property.
-     * It's necessary for readonly access to that property
+     * Is necessary for readonly access to that property
      *
      * @return array Avaliable languages
      */

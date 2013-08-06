@@ -26,7 +26,7 @@ class DefaultController extends AdminController
     public function actions()
     {
         return array(
-            // Actions for Imperavi Redactor file and image managing
+            // Actions for ImperaviRedactor file and image managing
             'redactorImageUpload' => array(
                 'class'=>'ext.imperaviRedactor.actions.ImageUpload',
                 'uploadPath'=>Yii::getPathOfAlias('webroot.uploads.images'),
@@ -109,8 +109,8 @@ class DefaultController extends AdminController
 				foreach($options as $type => $optionSet)
 				{
 
-					 //Get option model and save it's index for
-					 //  future usage in received $_POST
+					 // Get option model and save it's index for
+					 // future usage in received $_POST
 					foreach ($optionSet as $i => $option) 
 					{
 						 // $_POST structure is such:
@@ -186,10 +186,9 @@ class DefaultController extends AdminController
 				// Set only 1st tab active
 				'active'  => ++$count === 1,
 				'label'   => ucfirst($type).' Options',
-				/**
-				 * Controller implementing this function must have 
-				 *  _option_tab.php into it's views directory
-				 */
+
+				 // Controller that implements this function must have
+				 // _option_tab.php into it's views directory
 				'content' => $this->renderPartial('_option_tab', array(
 								'optionModels' => $optionModels,
 								'type'  => $type,
