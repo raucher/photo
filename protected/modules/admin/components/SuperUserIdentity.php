@@ -31,7 +31,7 @@ class SuperUserIdentity extends CUserIdentity
     {
         return array(
             'demoModeBehavior' => array(
-                'class' => 'admin.components.DemoModeBehavior',
+                'class' => 'ext.demoMode.DemoModeBehavior',
                 'sourceDbFileName' => 'photo.db',
             ),
         );

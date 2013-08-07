@@ -31,7 +31,7 @@ class AdminController extends Controller
             'pageTitleRewrite',
             array(
                 // Enables a warning message that the user is currently in demo-mode
-                'admin.components.DemoModeFilter',
+                'ext.demoMode.DemoModeFilter',
             ),
 		);
 	}

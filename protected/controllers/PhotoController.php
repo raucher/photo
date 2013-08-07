@@ -56,7 +56,7 @@ class PhotoController extends Controller
                 'ext.multilang.MultiLangFilter', // Supports language switching
             ),
             array(
-                'admin.components.DemoModeFilter', // Enables demo mode alerts
+                'ext.demoMode.DemoModeFilter', // Enables demo mode alerts
                 'message' => '<strong>You are in demo mode now!</strong>
                              <p>You can see here all changes made by you at the dashboard</p>',
             ),

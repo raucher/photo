@@ -95,7 +95,7 @@ return array(
 		),
 
 		'db'=>array(
-            'class'=>'admin.components.DemoModeDbConnection', // Supports demo-mode db cdn
+            'class'=>'ext.demoMode.DemoModeDbConnection', // Supports demo-mode db cdn
 			'connectionString'   => 'sqlite:'.realpath(dirname(__FILE__).'/../data/photo.db'),
             'initSQLs' => array(
                 'PRAGMA foreign_keys = ON', // Enables SQLite foreign key support
