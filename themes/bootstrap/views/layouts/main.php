@@ -33,7 +33,7 @@
     $this->widget('bootstrap.widgets.TbAlert', array(
         'id'=>'demo-alert',
         'alerts'=>array( // configurations per alert type
-            'demo'=>array('block'=>true, 'fade'=>true, 'closeText'=>false),
+            'demo'=>array('block'=>true, 'fade'=>false, 'closeText'=>false),
         ),
         'htmlOptions'=>array(
             'class'=>'text-center',

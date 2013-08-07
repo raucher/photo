@@ -62,22 +62,15 @@ class PhotoController extends Controller
             ),
             array(
                 'COutputCache',
-                'duration' => 5*60, // 5 minutes
+                'duration' => 15*60, // 15 minutes
                 'varyByParam' => array('lang'),
+                'varyByExpression'=>function(){ return Yii::app()->user->id; },
                 'dependency' => array(
                     'class' => 'CDbCacheDependency',
                     'sql' => 'SELECT MAX(update_time) FROM (SELECT update_time FROM tbl_gallery
                               UNION SELECT update_time FROM tbl_media
                               UNION SELECT update_time FROM tbl_option)',
                 ),
-            ),
-            array(
-                'CHttpCacheFilter',
-                'lastModified' => Yii::app()->db
-                                            ->createCommand('SELECT MAX(update_time) FROM (SELECT update_time FROM tbl_gallery
-                                              UNION SELECT update_time FROM tbl_media
-                                              UNION SELECT update_time FROM tbl_option)')
-                                            ->queryScalar(),
             ),
         );
     }
