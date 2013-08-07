@@ -10,9 +10,6 @@
  */
 class Option extends ActiveRecordExt
 {
-	// Set default type
-	//public $type = 'user';
-
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -86,7 +83,6 @@ class Option extends ActiveRecordExt
 	 */
 	protected function beforeSave()
 	{
-		//$this->value = serialize(CHtml::encode(trim($this->value)));
 		$this->value = serialize(CHtml::encode($this->value));
 		return parent::beforeSave();
 	}
@@ -99,7 +95,6 @@ class Option extends ActiveRecordExt
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('name',$this->name,true);

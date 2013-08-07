@@ -50,16 +50,4 @@ class ContactForm extends CFormModel
         return parent::validate()
                && mail('some@mail.com', $subject, $this->message, $headers);
     }
-
-	/**
-	 * Declares customized attribute labels.
-	 * If not declared here, an attribute would have a label that is
-	 * the same as its name with the first letter in upper case.
-	 */
-	/*public function attributeLabels()
-	{
-		return array(
-			'verifyCode'=>'Verification Code',
-		);
-	}*/
 }

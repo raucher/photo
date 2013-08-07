@@ -81,6 +81,9 @@ html, body{
 #main-logo{
     margin-left:10%;
 }
+#main-logo a:hover{
+    color: inherit;
+}
 
 /************ MAIN-CONTENT ******************/
 .content-block{
@@ -258,8 +261,12 @@ html, body{
 	right:0; background-image: url('../images/right-slider-arrow.png');
 }
 
-/*********** RESPONSIVE STYLES *******************/
+/*********** DEMO ALERT STYLES *******************/
+#demo-alert .alert{
+    margin:0; padding:2px;
+}
 
+/*********** RESPONSIVE STYLES *******************/
 @media (max-width: 980px){
     #main-logo, #main-nav-menu{
         float: none;

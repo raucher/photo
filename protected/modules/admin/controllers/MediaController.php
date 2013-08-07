@@ -67,10 +67,6 @@ class MediaController extends AdminController
 	public function actionCreate()
 	{
 		$model=new Media;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Media']))
 		{
 			$model->attributes=$_POST['Media'];
@@ -90,11 +86,8 @@ class MediaController extends AdminController
 	 */
 	public function actionUpdate($id)
 	{
-		$langs = Yii::app()->params->langs;
-
 		$model=$this->loadModel($id);
-
-		foreach ($langs as $lang){
+		foreach ($this->langs as $lang){
 			// Get translation associated with language
 			$translation = MediaTranslation::model()->findByPk(array(
 												'media_id' => $model->id,

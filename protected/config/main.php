@@ -30,16 +30,16 @@ return array(
 	),
 
     'modules'=>array(
-        // Fire up the admn module
+        // Fire up the admin module
         'admin',
         // uncomment the following to enable the Gii tool
-        'gii'=>array(
+        /*'gii'=>array(
             'class'=>'system.gii.GiiModule',
             'password'=>'pass',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters'=>array('127.0.0.1','::1'),
             'generatorPaths'=>array( 'bootstrap.gii' ),
-        ),
+        ),*/
     ),
 
 	// autoloading model and component classes
@@ -95,7 +95,7 @@ return array(
 		),
 
 		'db'=>array(
-            'class'=>'admin.components.DemoModeDbConnection', // Supports demo-mode db cdn
+            'class'=>'ext.demoMode.DemoModeDbConnection', // Supports demo-mode db cdn
 			'connectionString'   => 'sqlite:'.realpath(dirname(__FILE__).'/../data/photo.db'),
             'initSQLs' => array(
                 'PRAGMA foreign_keys = ON', // Enables SQLite foreign key support

@@ -13,6 +13,7 @@
 		<div class="container">
             <?php // Display demo-mode alert
                 $this->widget('bootstrap.widgets.TbAlert', array(
+                    'id'=>'demo-alert',
                     'alerts'=>array( // configurations per alert type
                         'demo'=>array('block'=>true, 'fade'=>true, 'closeText'=>false),
                     ),
@@ -61,7 +62,7 @@
                                         'label'=>'Change Password',
                                         'icon'=>'lock',
                                         'url'=>array('/admin/default/newpass'),
-                                        'visible'=> Yii::app()->user->id !== 'demo_mode_id',
+                                        'visible'=> Yii::app()->user->id !== 'demo_mode_user',
                                     ),
 								),
 						)); ?>
