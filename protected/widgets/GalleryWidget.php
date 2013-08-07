@@ -22,7 +22,6 @@ class GalleryWidget extends CWidget
         // If queried gallery exists then return it else show all galleries
         if(($this->_activeGallery = Gallery::model()->with('translation')->findByPk($gall)) === null)
             $this->_activeGallery = 'All';
-
     }
 
     public function run()
