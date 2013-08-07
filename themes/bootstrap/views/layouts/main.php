@@ -31,8 +31,9 @@
     <!-- HEADER -->
     <?php // Display demo-mode alert
     $this->widget('bootstrap.widgets.TbAlert', array(
+        'id'=>'demo-alert',
         'alerts'=>array( // configurations per alert type
-            'demo'=>array('block'=>true, 'fade'=>true, 'closeText'=>false),
+            'demo'=>array('block'=>true, 'fade'=>false, 'closeText'=>false),
         ),
         'htmlOptions'=>array(
             'class'=>'text-center',
@@ -47,7 +48,8 @@
                 <!--<div id="main-logo" class="text-center span4">-->
                 <div id="main-logo" class="text-center pull-left">
                     <?php $siteName = explode(' ', Option::getOption('sitename'), 2) ?>
-                    <?php printf('<h3><span class="olive">%s</span> %s</h3>', $siteName[0], $siteName[1])?>
+                    <?php printf('<h3><a href="%s"><span class="olive">%s</span> %s</a></h3>',
+                            $this->multiLangUrl('/photo/index'), $siteName[0], $siteName[1]); ?>
                 </div> <!-- #main-logo -->
             <!-- start: NAV MENU -->
                 <?php // multiLangUrl() is used to render correct url with default $lang parameter

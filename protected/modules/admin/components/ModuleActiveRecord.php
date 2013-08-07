@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class DemoModeDbConnection
+ * Class ModuleActiveRecord
  * Super class for some models
  *
  * @package photo

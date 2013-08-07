@@ -19,15 +19,11 @@ class ArticleController extends AdminController
 	 */
 	public function actionCreate()
 	{
-		$langs = array('en', 'ru', 'lv');		
-		foreach ($langs as $lang) {
+		foreach ($this->langs as $lang) {
 			$translations[$lang] = new ArticleTranslation;
 		}
 
 		$model=new Article;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Article']))
 		{
@@ -65,8 +61,7 @@ class ArticleController extends AdminController
 	{
 		$model=$this->loadModel($id);
 
-		$langs = array('en', 'ru', 'lv');
-		foreach ($langs as $lang){
+		foreach ($this->langs as $lang){
 			// Get translation associated with language
 			$translation = ArticleTranslation::model()->findByPk(array(
                 'article_id' => $model->id,
@@ -80,21 +75,9 @@ class ArticleController extends AdminController
 			$translations[$lang] = $translation;
 		}
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Article']))
 		{
 			$model->attributes=$_POST['Article'];
-			/**
-			 * TODO: Check for default app. language, not directly for 'en'!
-			 */
-			/*if( isset($_POST['ArticleTranslation']['en']) )
-			{
-				$title = $_POST['ArticleTranslation']['en']['title'];
-                if($model->isNewRecord || empty($model->url))
-				    $model->url = str_replace(' ', '-', mb_strtolower( trim($title) ));
-			}*/
             if($model->save() && $model->saveTranslations($translations, 'ArticleTranslation'))
             {
                 Yii::app()->user->setFlash('success', 'Article was successfully updated');

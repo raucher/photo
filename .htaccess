@@ -1,6 +1,6 @@
 AddDefaultCharset utf-8 
 
-#Options -Indexes
+Options -Indexes
 Options +FollowSymLinks
 
 RewriteEngine on

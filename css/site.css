@@ -81,3 +81,8 @@ h1 {padding-bottom:0.2em;}
 #article-form .redactor_editor{
 	height:200px;
 }
+
+/*********** DEMO ALERT STYLES *******************/
+#demo-alert .alert{
+    margin:0; padding:2px;
+}
