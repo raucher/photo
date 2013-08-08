@@ -23,6 +23,5 @@
 				<?php echo $content; ?>
 			</div>
 		</div>
-		<?php var_dump($_POST) ?>
 	</body>
 </html>
