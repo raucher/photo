@@ -65,6 +65,12 @@
                                 'url'=>$this->multiLangUrl('/photo/gallery'),
                             ),
                             array(
+                                'label'=>'About',
+                                'url'=>$this->multiLangUrl('/photo/page', array(
+                                    'page'=>'about',
+                                )),
+                            ),
+                            array(
                                 'label'=>'Contact',
                                 'url'=>$this->multiLangUrl('/photo/contact'),
                             ),

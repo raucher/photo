@@ -102,8 +102,8 @@ return array(
             ),
             'queryCachingDuration' => 5*60, // 5 minutes
             'schemaCachingDuration' => 1*60*60, // 1 hour
-			'enableProfiling'    => true,
-			'enableParamLogging' => true,
+			//'enableProfiling'    => true,
+			//'enableParamLogging' => true,
 		),
 		// uncomment the following to use a MySQL database
 		/*
@@ -129,21 +129,21 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),*/
-				array(
+				/*array(
 					'class'   => 'CProfileLogRoute',
 					'levels'  => 'profile',
 					'enabled' => true,
-		        ),
+		        ),*/
 				/*array(
 					'class'      => 'CWebLogRoute',
 					'categories' => 'application',
 					'levels'     => 'error, warning, trace, profile, info',
 		        ),*/
-		        array(
+		        /*array(
 					'class'  => 'XWebDebugRouter',
 					'config' => 'alignLeft, opaque, runInDebug, fixedPos, collapsed, yamlStyle',
 					'levels' => 'error, warning, trace, profile, info',
-		        ),
+		        ),*/
 			),
 		),
 	),
