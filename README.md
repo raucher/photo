@@ -7,8 +7,9 @@
 
 ## A little about the CMS
 
-* Use **_admin/admin_** as login and password to get in. You could change them later via dashboard
-* Also you are able to login in **demo mode** use **_demo/demo_** as login and password in this case
+* Dashboard url is: //yourwebpa.ge/admin
+  * Use **_admin/admin_** as login and password to get in. You could change them later via dashboard
+  * Also you are able to login in **demo mode** use **_demo/demo_** as login and password in this case
 
 ### CMS Features
 * Multilingual
