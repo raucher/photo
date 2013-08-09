@@ -60,18 +60,18 @@ class PhotoController extends Controller
                 'message' => '<strong>You are in demo mode now!</strong>
                              <p>You can see here all changes made by you at the dashboard</p>',
             ),
-            array(
+            /*array(
                 'COutputCache',
                 'duration' => 15*60, // 15 minutes
                 'varyByParam' => array('lang'),
-                'varyByExpression'=>function(){ return Yii::app()->user->id; },
+                'varyByExpression'=> function(){ return Yii::app()->user->id; },
                 'dependency' => array(
                     'class' => 'CDbCacheDependency',
                     'sql' => 'SELECT MAX(update_time) FROM (SELECT update_time FROM tbl_gallery
                               UNION SELECT update_time FROM tbl_media
                               UNION SELECT update_time FROM tbl_option)',
                 ),
-            ),
+            ),*/
         );
     }
 
