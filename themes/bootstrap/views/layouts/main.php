@@ -57,21 +57,21 @@
                         'id'=>'main-nav-menu',
                         'items' => array(
                             array(
-                                'label'=>'Home',
+                                'label'=>Yii::t('photo', 'Home'),
                                 'url'=>$this->multiLangUrl('/photo/index'),
                             ),
                             array(
-                                'label'=>'Gallery',
+                                'label'=>Yii::t('photo', 'Gallery'),
                                 'url'=>$this->multiLangUrl('/photo/gallery'),
                             ),
                             array(
-                                'label'=>'About',
+                                'label'=>Yii::t('photo', 'About'),
                                 'url'=>$this->multiLangUrl('/photo/page', array(
                                     'page'=>'about',
                                 )),
                             ),
                             array(
-                                'label'=>'Contact',
+                                'label'=>Yii::t('photo', 'Contact'),
                                 'url'=>$this->multiLangUrl('/photo/contact'),
                             ),
                         ),
@@ -104,15 +104,21 @@
                 $this->widget('zii.widgets.CMenu', array(
                     'items' => array(
                         array(
-                            'label'=>'Home',
+                            'label'=>Yii::t('photo', 'Home'),
                             'url'=>$this->multiLangUrl('/photo/index'),
                         ),
                         array(
-                            'label'=>'Gallery',
+                            'label'=>Yii::t('photo', 'Gallery'),
                             'url'=>$this->multiLangUrl('/photo/gallery'),
                         ),
                         array(
-                            'label'=>'Contact',
+                            'label'=>Yii::t('photo', 'About'),
+                            'url'=>$this->multiLangUrl('/photo/page', array(
+                                'page'=>'about',
+                            )),
+                        ),
+                        array(
+                            'label'=>Yii::t('photo', 'Contact'),
                             'url'=>$this->multiLangUrl('/photo/contact'),
                         ),
                     ),

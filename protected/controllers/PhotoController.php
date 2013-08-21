@@ -104,8 +104,8 @@ class PhotoController extends Controller
             ),
         ));
         $this->addWidget('Gmap', array(
-            'title'=>'Location',
-            'icon'=>'pencil',
+            'title'=>Yii::t('photo', 'Location'),
+            'icon'=>'home',
             'htmlOptions'=>array(
                 'class'=>'span6 my-class'
             ),
@@ -123,7 +123,7 @@ class PhotoController extends Controller
      */
     public function actionGallery($gall='all')
     {
-        $this->subtitle = 'Gallery';
+        $this->subtitle = Yii::t('photo', 'Gallery');
         if($gall === 'all' || !Gallery::model()->exists('id=:ID', array(':ID'=>$gall)))
         {
             $photos = Media::model()->with('translation')->findAll();
@@ -174,7 +174,8 @@ class PhotoController extends Controller
      */
     public function actionContact()
     {
-        $this->addWidget('contact', array('title'=>'Contacts', 'icon'=>'phone'));
+        $this->subtitle = Yii::t('photo', 'Contact us');
+        $this->addWidget('contact', array('title'=>Yii::t('photo', 'Contacts'), 'icon'=>'phone'));
         $this->addWidget('gmap', array('title'=>'Google Map', 'icon'=>'home'));
 
         $model = new ContactForm();

@@ -62,6 +62,9 @@ return array(
                 ),
             ),
         ),
+        'messages' => array(
+            'class' => 'CPhpMessageSource',
+        ),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

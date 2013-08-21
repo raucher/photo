@@ -37,6 +37,16 @@ class ContactForm extends CFormModel
 		);
 	}
 
+    public function attributeLabels()
+    {
+        return array(
+            'name' => Yii::t('photo', 'Name'),
+            'email' => Yii::t('photo', 'Email'),
+            'subject' => Yii::t('photo', 'Subject'),
+            'message' => Yii::t('photo', 'Message'),
+        );
+    }
+
     public function validate()
     {
         $name='=?UTF-8?B?'.base64_encode($this->name).'?=';
